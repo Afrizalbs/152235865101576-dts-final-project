@@ -1,3 +1,17 @@
 .App {
   font-family: "roboto";
 }
+
+.nav-active {
+  color: #2196f3;
+  margin: 10px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.nav-inactive {
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+  text-transform: capitalize;
+}

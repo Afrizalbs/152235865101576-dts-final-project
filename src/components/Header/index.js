@@ -6,14 +6,26 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Header(props) {
   const { sections, title } = props;
+  let navigate = useNavigate();
+
+  const handleSignUp = () => {
+    navigate("register");
+  };
+
+  const handleHomeButton = () => {
+    navigate("/");
+  };
 
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Button size="small">Subscribe</Button>
+        <Button size="small" onClick={() => handleHomeButton()}>
+          home
+        </Button>
         <Typography
           component="h2"
           variant="h5"
@@ -27,7 +39,7 @@ function Header(props) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <Button variant="outlined" size="small">
+        <Button variant="outlined" size="small" onClick={() => handleSignUp()}>
           Sign up
         </Button>
       </Toolbar>
@@ -37,16 +49,15 @@ function Header(props) {
         sx={{ justifyContent: "space-between", overflowX: "auto" }}
       >
         {sections.map((section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            sx={{ p: 1, flexShrink: 0 }}
+          <NavLink
+            key={section}
+            to={section.url}
+            className={({ isActive }) =>
+              isActive ? "nav-active" : "nav-inactive"
+            }
           >
             {section.title}
-          </Link>
+          </NavLink>
         ))}
       </Toolbar>
     </React.Fragment>
