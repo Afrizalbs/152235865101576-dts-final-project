@@ -9,6 +9,10 @@
   text-decoration: none;
 }
 
+.nav-inactive:hover {
+  color: #2196f3;
+}
+
 .nav-inactive {
   text-decoration: none;
   color: black;
