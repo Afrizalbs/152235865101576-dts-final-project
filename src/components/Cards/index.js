@@ -7,28 +7,43 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 
-export default function Cards() {
+export default function Cards({ title, desc, thumb, author, onClick }) {
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
       <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="140"
-          image="https://source.unsplash.com/random"
-        />
+        <CardMedia component="img" alt={thumb} height="170" image={thumb} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
+          <Typography
+            gutterBottom
+            variant="h6"
+            component="div"
+            sx={{
+              display: "-webkit-box",
+              overflow: "hidden",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 2,
+            }}
+          >
+            {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              display: "-webkit-box",
+              overflow: "hidden",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 4,
+            }}
+          >
+            {desc}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Button size="small">{author}</Button>
+          <Button variant="outlined" size="small" onClick={onClick}>
+            Read More
+          </Button>
         </CardActions>
       </Card>
     </Grid>

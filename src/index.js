@@ -5,7 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LoginScreen, RegisterScreen } from "./screen";
-import { Games, News } from "./containers";
+import {
+  Console,
+  DetailNews,
+  Esport,
+  Games,
+  LazyTalk,
+  News,
+  TechNews,
+  TechTip,
+} from "./containers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,11 +26,12 @@ root.render(
         <Route element={<App />}>
           <Route path="/" element={<News />} />
           <Route path="games" element={<Games />} />
-          <Route path="console" element={<h1>console</h1>} />
-          <Route path="esport" element={<h1>esport</h1>} />
-          <Route path="lazy-talk" element={<h1>lazy talk</h1>} />
-          <Route path="tech-news" element={<h1>tech news</h1>} />
-          <Route path="tech-tip" element={<h1>tech tip</h1>} />
+          <Route path="console" element={<Console />} />
+          <Route path="esport" element={<Esport />} />
+          <Route path="lazy-talk" element={<LazyTalk />} />
+          <Route path="tech-news" element={<TechNews />} />
+          <Route path="tech-tip" element={<TechTip />} />
+          <Route path="detail/:id" element={<DetailNews />} />
         </Route>
         <Route path="*" element={<div>page not found</div>} />
       </Routes>

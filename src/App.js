@@ -43,8 +43,8 @@ function App() {
           <Outlet />
         </Container>
         <Footer
-          title="Footer"
-          description="Something here to give the footer a purpose!"
+          title="MaxNews"
+          description="Portal Berita Tech and Game Terupdate"
         />
       </ThemeProvider>
     </div>
