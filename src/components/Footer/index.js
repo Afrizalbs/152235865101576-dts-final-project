@@ -9,8 +9,11 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link
+        color="inherit"
+        href="https://github.com/Afrizalbs/152235865101576-dts-final-project"
+      >
+        Afrizal Bagas Santoso
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
