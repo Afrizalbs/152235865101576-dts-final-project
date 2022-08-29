@@ -1,6 +1,6 @@
 # Website Berita Games and Tech
 
-Live Site Preview [MaxNews](https://max-news-dun.vercel.app/).
+Live Site Preview [MaxNews](https://max-news-react.vercel.app/).
 
 ## Technology
 
